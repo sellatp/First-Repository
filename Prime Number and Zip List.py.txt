@@ -1,0 +1,52 @@
+#Number 4.1
+
+#Input jumlah N
+j = int(input('N: '))
+count = 0
+a = 1
+
+#define prime number
+def is_prime_number (x):
+  for i in range(2, x):
+    if x % i == 0:
+      return False
+  return True
+
+prime_number_list = []
+while count < j:
+    a = a + 1
+    if is_prime_number(a):
+     prime_number_list.append(a)
+     count = count + 1
+
+   
+print(prime_number_list)
+
+#Number 4.2
+
+# Input Kedua List
+j1 = input('list_1: ')
+k1 = input('list_2: ')
+
+#Sort Kedua List
+j2 = sorted(j1.split(","))
+k2 = sorted(k1.split(","))
+
+#Cek hitung jumlah List
+count_j = len(j2)
+count_k = len(k2)
+
+#Add null ke list yg jumlahnya lebih sedikit
+while count_j < count_k:
+    j2.append("NULL")
+    count_j = count_j+1
+
+while count_k < count_j:
+    k2.append("NULL")
+    count_k = count_k+1
+
+#Zip 2 list
+new_lst = [list(x) for x in zip(j2, k2)]
+print(new_lst)
+
+
